@@ -1,0 +1,8 @@
+{
+  "label": "Diagrams",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Creating diagrams with mermaid plugins"
+  }
+}

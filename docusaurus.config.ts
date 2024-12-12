@@ -28,9 +28,24 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'th'],
   },
-
+  markdown: {
+    mermaid: true,
+  },
+  themes: [[
+    require.resolve("@easyops-cn/docusaurus-search-local"),
+    /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+    ({
+      // ... Your options.
+      // `hashed` is recommended as long-term-cache of index file is possible.
+      hashed: true,
+      // For Docs using Chinese, The `language` is recommended to set to:
+      // ```
+      language: ["en", "th"],
+      // ```
+    }),
+  ], '@docusaurus/theme-mermaid', '@docusaurus/theme-live-codeblock'],
   presets: [
     [
       'classic',
@@ -74,6 +89,9 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          type: 'localeDropdown'
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
